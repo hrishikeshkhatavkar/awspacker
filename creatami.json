@@ -1,13 +1,13 @@
 {
   "variables": {
-    "aws_access_key": "AKIAUM2W364II3OX3H6E",
-    "aws_secret_key": "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"
+    "aws_access_key": "",
+    "aws_secret_key": ""
   },
   "builders": [
     {
       "type": "amazon-ebs",
-      "access_key": "{{user `AKIAUM2W364II3OX3H6E`}}",
-      "secret_key": "{{user `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`}}",
+      "access_key": "{{user `aws_access_key`}}",
+      "secret_key": "{{user `aws_secret_key`}}",
       "region": "us-east-1",
       "source_ami_filter": {
         "filters": {
@@ -15,7 +15,7 @@
           "name": "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*",
           "root-device-type": "ebs"
         },
-        "owners": ["302440511248"],
+        "owners": ["099720109477"],
         "most_recent": true
       },
       "instance_type": "t2.micro",
@@ -23,5 +23,4 @@
       "ami_name": "packer-example {{timestamp}}"
     }
   ]
- }
-  
+}
